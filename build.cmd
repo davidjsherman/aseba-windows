@@ -1,13 +1,13 @@
 mkdir build\dashel
 pushd build\dashel
 cmake.exe -G "MinGW Makefiles" "%WORKSPACE%\source\dashel"
-make.bat
+call make.bat
 popd
 
 mkdir build\enki
 pushd build\enki
-cmake.bat -G "MinGW Makefiles" "%WORKSPACE%\source\enki"
-make.bat
+cmake.exe -G "MinGW Makefiles" "%WORKSPACE%\source\enki"
+call make.bat
 popd
 
 mkdir build\aseba
@@ -24,7 +24,7 @@ cmake.exe -G "MinGW Makefiles"^
  -D "QWT_INCLUDE_DIR=%ASEBA_DEP%\qwt\qwt-5.2.1\src"^
  -D "QWT_LIBRARIES=%ASEBA_DEP%\qwt\qwt-5.2.1\lib\libqwt5.a"^
  "%WORKSPACE%\source\aseba"
-make.bat
+call make.bat
 mkdir strip
 for /f %%F in ('dir *.exe /s /b') do (
 	objcopy.exe --strip-all %%F strip\%%~nxF
