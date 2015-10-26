@@ -26,6 +26,7 @@ cmake.exe -G "MinGW Makefiles"^
  "%WORKSPACE%\source\aseba"
 call make.bat
 mkdir strip
+del /Q strip
 for /f %%F in ('dir *.exe /s /b') do (
 	objcopy.exe --strip-all %%F strip\%%~nxF
 )
