@@ -131,7 +131,7 @@ SectionGroup /e "!Aseba" GroupAseba
 			File "${QTDIR}\bin\QtNetwork4.dll"
 			File "${QTDIR}\bin\QtSql4.dll"
 			File "${QTDIR}\bin\QtSvg4.dll"
-			File "${QTDIR}\bin\qwt5.dll"
+			File "${ASEBA_DEP}\qwt\qwt-5.2.1\lib\qwt5.dll"
 			File "${ASEBA_DEP}\SDL.dll"
 		!endif
 		!ifdef DEBUG_PACKAGE
