@@ -38,7 +38,6 @@ popd
 mkdir build\package
 pushd build\package
 makensis.exe^
- /Oaseba-package.log^
  "/DASEBA_DEP=%ASEBA_DEP%"^
  "/DQTDIR=%QTDIR%"^
  -- "%WORKSPACE%\source\package\aseba.nsi"
