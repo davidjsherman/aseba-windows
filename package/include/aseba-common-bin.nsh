@@ -66,6 +66,12 @@ SectionGroup /e "!Aseba" GroupAseba
 		${If} $Language == '1036'
 			; French
 			File "README.fr.txt"
+		${ElseIf} $Language == '1031'
+			; German
+			File "README.de.txt"
+		${ElseIf} $Language == '1040'
+			; Italian
+			File "README.it.txt"
 		${Else}
 			File "README.en.txt"
 		${EndIf}
@@ -96,8 +102,14 @@ SectionGroup /e "!Aseba" GroupAseba
 			${If} $Language == '1036'
 				; French
 				!insertmacro CreateInternetShortcut "$SMPROGRAMS\$StartMenuFolder\$(STR_Doc_Dir)\$(STR_Doc_Browser_Online)" "https://www.thymio.org/fr:start" "$INSTDIR\asebahelp.ico" "0"
+			${ElseIf} $Language == '1031'
+				; German
+				!insertmacro CreateInternetShortcut "$SMPROGRAMS\$StartMenuFolder\$(STR_Doc_Dir)\$(STR_Doc_Browser_Online)" "https://www.thymio.org/de:start" "$INSTDIR\asebahelp.ico" "0"
+			${ElseIf} $Language == '1040'
+				; Italian
+				!insertmacro CreateInternetShortcut "$SMPROGRAMS\$StartMenuFolder\$(STR_Doc_Dir)\$(STR_Doc_Browser_Online)" "https://www.thymio.org/it:start" "$INSTDIR\asebahelp.ico" "0"
 			${Else}
-				!insertmacro CreateInternetShortcut "$SMPROGRAMS\$StartMenuFolder\$(STR_Doc_Dir)\$(STR_Doc_Browser_Online)" "https://www.thymio.org/fr:start" "$INSTDIR\asebahelp.ico" "0"
+				!insertmacro CreateInternetShortcut "$SMPROGRAMS\$StartMenuFolder\$(STR_Doc_Dir)\$(STR_Doc_Browser_Online)" "https://www.thymio.org/en:start" "$INSTDIR\asebahelp.ico" "0"
 			${EndIf}
 			; Thymio stuff?
 			${If} $FullInstall == "true"

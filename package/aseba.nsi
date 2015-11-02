@@ -68,10 +68,14 @@
 ;Translations
   !insertmacro LANG_LOAD "English"			; translations/English.nsh
   !insertmacro LANG_LOAD "French"			; translations/French.nsh
+  !insertmacro LANG_LOAD "German"			; translations/German.nsh
+  !insertmacro LANG_LOAD "Italian"			; translations/Italian.nsh
 
 ; License: only the english license is used, because FSF strongly discourage using an unofficial translation
 LicenseLangString license ${LANG_ENGLISH} "${ASEBA_SRC}\license.txt"
 LicenseLangString license ${LANG_FRENCH}  "${ASEBA_SRC}\license.txt"
+LicenseLangString license ${LANG_GERMAN}  "${ASEBA_SRC}\license.txt"
+LicenseLangString license ${LANG_ITALIAN} "${ASEBA_SRC}\license.txt"
 
 ;--------------------------------
 ;Name and file (Defined here to be translation-enabled)
