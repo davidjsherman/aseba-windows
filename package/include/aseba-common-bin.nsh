@@ -18,15 +18,6 @@
 	along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-!ifdef RELEASE_PACKAGE
-	!define ASEBA_BIN_RELEASE_OR_DBG	"${ASEBA_BIN}"
-	!define ASEBA_DEP_RELEASE_OR_DBG	"${ASEBA_DEP}"
-!endif
-!ifdef DEBUG_PACKAGE
-	!define ASEBA_BIN_RELEASE_OR_DBG	"${ASEBA_BIN_DBG}"
-	!define ASEBA_DEP_RELEASE_OR_DBG	"${ASEBA_DEP_DBG}"
-!endif
-
 SectionGroup /e "!Aseba" GroupAseba
 	Section "!Aseba Studio IDE" SecStudio
 		SectionIn 1 2 3
@@ -34,12 +25,7 @@ SectionGroup /e "!Aseba" GroupAseba
 		SetOutPath "$INSTDIR"
 
 		# Main files
-		!ifdef RELEASE_PACKAGE
-			File "${ASEBA_BIN_STRIP}\asebastudio.exe"
-		!endif
-		!ifdef DEBUG_PACKAGE
-			File "${ASEBA_BIN_DBG}\clients\studio\asebastudio.exe"
-		!endif
+		File "${ASEBA_BIN_STRIP}\asebastudio.exe"
 		File "${ASEBA_BIN}\clients\studio\aseba-doc.qhc"
 		File "${ASEBA_BIN}\clients\studio\aseba-doc.qch"
 		File "${ASEBA_SRC}\menu\windows\asebastudio.ico"
@@ -50,14 +36,8 @@ SectionGroup /e "!Aseba" GroupAseba
 			File "${ASEBA_SRC}\menu\windows\thymiovpl.ico"
 			File "${ASEBA_SRC}\menu\windows\thymioupgrader.ico"
 			File "${ASEBA_SRC}\menu\windows\asebahelp.ico"
-			!ifdef RELEASE_PACKAGE
-				File "${ASEBA_BIN_STRIP}\thymioupgrader.exe"
-				File "${ASEBA_BIN_STRIP}\thymiovpl.exe"
-			!endif
-			!ifdef DEBUG_PACKAGE
-				File "${ASEBA_BIN_DBG}\clients\thymioupgrader\thymioupgrader.exe"
-				File "${ASEBA_BIN_DBG}\clients\studio\thymiovpl.exe"
-			!endif
+			File "${ASEBA_BIN_STRIP}\thymioupgrader.exe"
+			File "${ASEBA_BIN_STRIP}\thymiovpl.exe"
 		${EndIf}
 		
 		# Version file (version.txt)
@@ -130,51 +110,26 @@ SectionGroup /e "!Aseba" GroupAseba
 		SetOutPath "$INSTDIR"
 
 		!ifndef FAKE_PACKAGE
-		File "${ASEBA_DEP_RELEASE_OR_DBG}\libgcc_s_dw2-1.dll"
-		File "${ASEBA_DEP_RELEASE_OR_DBG}\mingwm10.dll"
-		File "${ASEBA_DEP_RELEASE_OR_DBG}\libstdc++-6.dll"
-		!ifdef RELEASE_PACKAGE
-			File "${QTDIR}\bin\QtCore4.dll"
-			File "${QTDIR}\bin\QtGui4.dll"
-			File "${QTDIR}\bin\QtOpenGL4.dll"
-			File "${QTDIR}\bin\QtXml4.dll"
-			File "${QTDIR}\bin\QtHelp4.dll"
-			File "${QTDIR}\bin\QtCLucene4.dll"
-			File "${QTDIR}\bin\QtNetwork4.dll"
-			File "${QTDIR}\bin\QtSql4.dll"
-			File "${QTDIR}\bin\QtSvg4.dll"
-			File "${ASEBA_DEP}\qwt\qwt-5.2.1\lib\qwt5.dll"
-			File "${ASEBA_DEP}\SDL.dll"
-		!endif
-		!ifdef DEBUG_PACKAGE
-			File "${ASEBA_DEP_DBG}\${QT_VERSION}\QtCored4.dll"
-			File "${ASEBA_DEP_DBG}\${QT_VERSION}\QtGuid4.dll"
-			File "${ASEBA_DEP_DBG}\${QT_VERSION}\QtOpenGLd4.dll"
-			File "${ASEBA_DEP_DBG}\${QT_VERSION}\QtXmld4.dll"
-			File "${ASEBA_DEP_DBG}\${QT_VERSION}\QtHelpd4.dll"
-			File "${ASEBA_DEP_DBG}\${QT_VERSION}\QtCLucened4.dll"
-			File "${ASEBA_DEP_DBG}\${QT_VERSION}\QtNetworkd4.dll"
-			File "${ASEBA_DEP_DBG}\${QT_VERSION}\QtSqld4.dll"
-			File "${ASEBA_DEP_DBG}\${QT_VERSION}\QtSvgd4.dll"
-			File "${ASEBA_DEP_DBG}\${QT_VERSION}\qwtd5.dll"
-			File "${ASEBA_DEP_DBG}\SDL.dll"
-		!endif
+		File "${ASEBA_DEP}\libgcc_s_dw2-1.dll"
+		File "${ASEBA_DEP}\mingwm10.dll"
+		File "${ASEBA_DEP}\libstdc++-6.dll"
+		File "${QTDIR}\bin\QtCore4.dll"
+		File "${QTDIR}\bin\QtGui4.dll"
+		File "${QTDIR}\bin\QtOpenGL4.dll"
+		File "${QTDIR}\bin\QtXml4.dll"
+		File "${QTDIR}\bin\QtHelp4.dll"
+		File "${QTDIR}\bin\QtCLucene4.dll"
+		File "${QTDIR}\bin\QtNetwork4.dll"
+		File "${QTDIR}\bin\QtSql4.dll"
+		File "${QTDIR}\bin\QtSvg4.dll"
+		File "${ASEBA_DEP}\qwt\qwt-5.2.1\lib\qwt5.dll"
+		File "${ASEBA_DEP}\SDL.dll"
 
 		SetOutPath "$INSTDIR\sqldrivers"
-		!ifdef RELEASE_PACKAGE
-			File "${QTDIR}\plugins\sqldrivers\qsqlite4.dll"
-		!endif
-		!ifdef DEBUG_PACKAGE
-			File "${ASEBA_DEP_DBG}\${QT_VERSION}\qsqlited4.dll"
-		!endif
+		File "${QTDIR}\plugins\sqldrivers\qsqlite4.dll"
 
 		SetOutPath "$INSTDIR\iconengines"
-		!ifdef RELEASE_PACKAGE
-			File "${QTDIR}\plugins\iconengines\qsvgicon4.dll"
-		!endif
-		!ifdef DEBUG_PACKAGE
-			File "${ASEBA_DEP_DBG}\${QT_VERSION}\qsvgicond4.dll"
-		!endif
+		File "${QTDIR}\plugins\iconengines\qsvgicon4.dll"
 		!endif ;FAKE_PACKAGE
 
 	SectionEnd
@@ -186,16 +141,9 @@ Section "Simulations" SecSim
 	SetOutPath "$INSTDIR"
 
 	!ifndef FAKE_PACKAGE
-	!ifdef RELEASE_PACKAGE
-		File "${ASEBA_BIN_STRIP}\asebachallenge.exe"
-		;File "${ASEBA_BIN_STRIP}\asebamarxbot.exe"
-		File "${ASEBA_BIN_STRIP}\asebaplayground.exe"
-	!endif
-	!ifdef DEBUG_PACKAGE
-		File "${ASEBA_BIN_DBG}\targets\challenge\asebachallenge.exe"
-		;File "${ASEBA_BIN_DBG}\targets\enki-marxbot\asebamarxbot.exe"
-		File "${ASEBA_BIN_DBG}\targets\playground\asebaplayground.exe"
-	!endif
+	File "${ASEBA_BIN_STRIP}\asebachallenge.exe"
+	;File "${ASEBA_BIN_STRIP}\asebamarxbot.exe"
+	File "${ASEBA_BIN_STRIP}\asebaplayground.exe"
 	File "${ASEBA_SRC}\menu\windows\asebachallenge.ico"
 	File "${ASEBA_SRC}\menu\windows\asebaplayground.ico"
 	File "${ASEBA_SRC}\targets\playground\unifr.playground"
@@ -217,12 +165,7 @@ SectionGroup /e $(NAME_GroupCLI) GroupCLI
 
 		SetOutPath "$INSTDIR"
 
-		!ifdef RELEASE_PACKAGE
-			File "${ASEBA_BIN_STRIP}\asebaswitch.exe"
-		!endif
-		!ifdef DEBUG_PACKAGE
-			File "${ASEBA_BIN_DBG}\switches\switch\asebaswitch.exe"
-		!endif
+		File "${ASEBA_BIN_STRIP}\asebaswitch.exe"
 
 
 		SetShellVarContext all		; current / all. Install program for all users
@@ -237,12 +180,7 @@ SectionGroup /e $(NAME_GroupCLI) GroupCLI
 
 		SetOutPath "$INSTDIR"
 
-		!ifdef RELEASE_PACKAGE
-			File "${ASEBA_BIN_STRIP}\asebahttp.exe"
-		!endif
-		!ifdef DEBUG_PACKAGE
-			File "${ASEBA_BIN_DBG}\switches\http\asebahttp.exe"
-		!endif
+		File "${ASEBA_BIN_STRIP}\asebahttp.exe"
 
 
 		SetShellVarContext all		; current / all. Install program for all users
@@ -258,7 +196,6 @@ SectionGroup /e $(NAME_GroupCLI) GroupCLI
 		SetOutPath "$INSTDIR"
 		
 		!ifndef FAKE_PACKAGE
-		!ifdef RELEASE_PACKAGE
 		File "${ASEBA_BIN_STRIP}\asebacmd.exe"
 		File "${ASEBA_BIN_STRIP}\asebadump.exe"
 		File "${ASEBA_BIN_STRIP}\asebaeventlogger.exe"
@@ -267,17 +204,6 @@ SectionGroup /e $(NAME_GroupCLI) GroupCLI
 		File "${ASEBA_BIN_STRIP}\asebaexec.exe"
 		File "${ASEBA_BIN_STRIP}\asebadummynode.exe"
 		File "${ASEBA_BIN_STRIP}\asebashell.exe"
-		!endif
-		!ifdef DEBUG_PACKAGE
-		File "${ASEBA_BIN_DBG}\clients\cmd\asebacmd.exe"
-		File "${ASEBA_BIN_DBG}\clients\dump\asebadump.exe"
-		File "${ASEBA_BIN_DBG}\clients\eventlogger\asebaeventlogger.exe"
-		File "${ASEBA_BIN_DBG}\clients\replay\asebaplay.exe"
-		File "${ASEBA_BIN_DBG}\clients\replay\asebarec.exe"
-		File "${ASEBA_BIN_DBG}\clients\exec\asebaexec.exe"
-		File "${ASEBA_BIN_DBG}\targets\dummy\asebadummynode.exe"
-		File "${ASEBA_BIN_DBG}\examples\clients\cpp-shell\asebashell.exe"
-		!endif
 		!endif ; FAKE_PACKAGE
 
 		SetShellVarContext all		; current / all. Install program for all users

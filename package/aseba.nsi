@@ -21,7 +21,6 @@
 ;--------------------------------
 ;Includes
 
-  !define RELEASE_PACKAGE
   !define REGISTRY_KEY "Software\aseba"
   !addincludedir ".\include"
   !include aseba-common-header.nsh
