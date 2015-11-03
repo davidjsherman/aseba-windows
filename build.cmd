@@ -35,11 +35,9 @@ for /f %%F in ('dir *.exe /s /b') do (
 )
 popd
 
-mkdir build\package
-pushd build\package
+del /Q *.exe
 makensis.exe^
  "/DASEBA_DEP=%ASEBA_DEP%"^
  "/DQTDIR=%QTDIR%"^
  -- "%WORKSPACE%\source\package\aseba.nsi"
 move "%WORKSPACE%\source\package\*.exe" .
-popd
