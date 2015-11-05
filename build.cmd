@@ -27,8 +27,8 @@ cmake.exe -G "MinGW Makefiles"^
  -D "ENKI_VIEWER_LIBRARY=%WORKSPACE%\build\enki\viewer\libenkiviewer.a"^
  -D "LIBXML2_INCLUDE_DIR=%ASEBA_DEP%\libxml2\include"^
  -D "LIBXML2_LIBRARIES=%ASEBA_DEP%\libxml2\win32\bin.mingw\libxml2.a"^
- -D "QWT_INCLUDE_DIR=%ASEBA_DEP%\qwt\qwt-5.2.1\src"^
- -D "QWT_LIBRARIES=%ASEBA_DEP%\qwt\qwt-5.2.1\lib\libqwt5.a"^
+ -D "QWT_INCLUDE_DIR=%ASEBA_DEP%\qwt-5.2.3\src"^
+ -D "QWT_LIBRARIES=%ASEBA_DEP%\qwt-5.2.3\lib\libqwt5.a"^
  "%WORKSPACE%\source\aseba"
 call make.bat
 mkdir strip
