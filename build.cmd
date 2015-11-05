@@ -1,6 +1,7 @@
 mkdir build\dashel
 pushd build\dashel
 cmake.exe -G "MinGW Makefiles"^
+ -D "CMAKE_BUILD_TYPE=Release"^
  -D "BUILD_SHARED_LIBS=OFF"^
  "%WORKSPACE%\source\dashel"
 call make.bat
@@ -9,6 +10,7 @@ popd
 mkdir build\enki
 pushd build\enki
 cmake.exe -G "MinGW Makefiles"^
+ -D "CMAKE_BUILD_TYPE=Release"^
  "%WORKSPACE%\source\enki"
 call make.bat
 popd
@@ -16,6 +18,7 @@ popd
 mkdir build\aseba
 pushd build\aseba
 cmake.exe -G "MinGW Makefiles"^
+ -D "CMAKE_BUILD_TYPE=Release"^
  -D "dashel_DIR=%WORKSPACE%\build\dashel"^
  -D "DASHEL_INCLUDE_DIR=%WORKSPACE%\source\dashel"^
  -D "DASHEL_LIBRARY=%WORKSPACE%\build\dashel\libdashel.a"^
