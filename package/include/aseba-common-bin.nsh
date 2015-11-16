@@ -124,7 +124,7 @@ SectionGroup /e "!Aseba" GroupAseba
 		File "${QTDIR}\bin\QtSql4.dll"
 		File "${QTDIR}\bin\QtSvg4.dll"
 		File "${QTDIR}\bin\QtWebKit4.dll"
-		File "${ASEBA_DEP}\qwt-5.2.3\lib\qwt5.dll"
+		File "${ASEBA_DEP}\qwt\lib\qwt5.dll"
 		File "${ASEBA_DEP}\SDL.dll"
 
 		SetOutPath "$INSTDIR\sqldrivers"
