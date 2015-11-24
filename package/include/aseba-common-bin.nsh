@@ -36,8 +36,10 @@ SectionGroup /e "!Aseba" GroupAseba
 			File "${ASEBA_SRC}\menu\windows\thymiovpl.ico"
 			File "${ASEBA_SRC}\menu\windows\thymioupgrader.ico"
 			File "${ASEBA_SRC}\menu\windows\asebahelp.ico"
+			File "${ASEBA_SRC}\menu\windows\thymiownetconfig.ico"
 			File "${ASEBA_BIN_STRIP}\thymioupgrader.exe"
 			File "${ASEBA_BIN_STRIP}\thymiovpl.exe"
+			File "${ASEBA_BIN_STRIP}\thymiownetconfig.exe"
 		${EndIf}
 		
 		# Version file (version.txt)
@@ -100,6 +102,8 @@ SectionGroup /e "!Aseba" GroupAseba
 				; Thymio flasher 
 				; CreateDirectory "$SMPROGRAMS\$StartMenuFolder\Thymio Firmware Upgrader"
 				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Thymio Firmware Upgrader.lnk" "$INSTDIR\thymioupgrader.exe" "" "$INSTDIR\thymioupgrader.ico"
+				; Thymio wireless configurator
+				CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Wireless Thymio Network Configurator.lnk" "$INSTDIR\thymiownetconfig.exe" "" "$INSTDIR\thymiownetconfig.ico"
 			${EndIf}
 		!insertmacro MUI_STARTMENU_WRITE_END
 	SectionEnd
