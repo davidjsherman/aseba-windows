@@ -132,6 +132,9 @@ SectionGroup /e "!Aseba" GroupAseba
 
 		SetOutPath "$INSTDIR\iconengines"
 		File "${QTDIR}\plugins\iconengines\qsvgicon4.dll"
+
+		SetOutPath "$INSTDIR\imageformats"
+		File "${QTDIR}\plugins\imageformats\qsvg4.dll"
 		!endif ;FAKE_PACKAGE
 
 	SectionEnd
