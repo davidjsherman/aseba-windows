@@ -114,7 +114,6 @@ SectionGroup /e "!Aseba" GroupAseba
 		SetOutPath "$INSTDIR"
 
 		!ifndef FAKE_PACKAGE
-		File "${ASEBA_DEP}\mingwm10.dll"
 		File "${QTDIR}\bin\libgcc_s_dw2-1.dll"
 		File "${QTDIR}\bin\libstdc++-6.dll"
 		File "${QTDIR}\bin\libwinpthread-1.dll"
