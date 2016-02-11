@@ -138,6 +138,13 @@ SectionGroup /e "!Aseba" GroupAseba
 
 		SetOutPath "$INSTDIR\imageformats"
 		File "${QTDIR}\plugins\imageformats\qsvg4.dll"
+		
+		SetOutPath "$INSTDIR\translations"
+		File "${QTDIR}\translations\qt_fr.qm"
+		File "${QTDIR}\translations\qt_de.qm"
+		File "${QTDIR}\translations\qt_es.qm"
+		File "${QTDIR}\translations\qt_ja.qm"
+		
 		!endif ;FAKE_PACKAGE
 
 	SectionEnd
