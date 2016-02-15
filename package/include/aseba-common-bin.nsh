@@ -146,6 +146,7 @@ SectionGroup /e "!Aseba" GroupAseba
 		File "${QTDIR}\translations\qt_de.qm"
 		File "${QTDIR}\translations\qt_es.qm"
 		File "${QTDIR}\translations\qt_ja.qm"
+		File "qt_it.qm"
 		
 		!endif ;FAKE_PACKAGE
 
