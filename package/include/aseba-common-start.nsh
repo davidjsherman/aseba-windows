@@ -32,7 +32,7 @@ Section "-Init before install" InitBeforeInst	; Hidden section -> always execute
 	SetOutPath "$INSTDIR"
 
 	; Enable logging
-	LogSet ${LOG_TO_FILE} ;; requires NSIS built with NSIS_CONFIG_LOG
+	;; LogSet ${LOG_TO_FILE} ;; requires NSIS built with NSIS_CONFIG_LOG
 
 	; Get UTC Time
 	${GetTime} "" "LS" $0 $1 $2 $3 $4 $5 $6
@@ -44,12 +44,12 @@ Section "-Init before install" InitBeforeInst	; Hidden section -> always execute
 	; $5="05"      minute
 	; $6="50"      seconds
  
-	LogText ""
-	LogText "***********************************************************************"
-	LogText ""
-	LogText "Starting new installation."
-	LogText "Aseba Windows ${VERSION}"
-	LogText "Date: $0/$1/$2 ($3) $4:$5:$6 (UTC)"
+	;; LogText ""
+	;; LogText "***********************************************************************"
+	;; LogText ""
+	;; LogText "Starting new installation."
+	;; LogText "Aseba Windows ${VERSION}"
+	;; LogText "Date: $0/$1/$2 ($3) $4:$5:$6 (UTC)"
 
 SectionEnd
 	
@@ -78,7 +78,7 @@ FunctionEnd
 !endif
 
 Function WriteVersionFile
-	LogText "Writing version.txt"
+	;; LogText "Writing version.txt"
 	FileOpen $0 "$INSTDIR\version.txt" w 	; Overwrite
 	FileWrite $0 "${VERSION}"
 	FileClose $0
