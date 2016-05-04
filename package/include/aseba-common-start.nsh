@@ -32,7 +32,7 @@ Section "-Init before install" InitBeforeInst	; Hidden section -> always execute
 	SetOutPath "$INSTDIR"
 
 	; Enable logging
-	LogSet ${LOG_TO_FILE}
+	LogSet ${LOG_TO_FILE} ;; requires NSIS built with NSIS_CONFIG_LOG
 
 	; Get UTC Time
 	${GetTime} "" "LS" $0 $1 $2 $3 $4 $5 $6

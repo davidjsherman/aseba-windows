@@ -53,7 +53,7 @@
   !define DRV_INF_WIN8 "${ASEBA_DEP}\thymio-drv\win_8"
   !define DEVCON_SRC "${ASEBA_DEP}\devcon"
     
-  !define LOG_TO_FILE on 		; on / off. You need a special build of NSIS with logging enabled. To be downloaded on the NSIS website
+  !define LOG_TO_FILE off 		; on / off. You need a special build of NSIS with logging enabled. To be downloaded on the NSIS website
   
   ShowInstDetails show
   ShowUninstDetails show
@@ -100,7 +100,7 @@
 !macro LANG_LOAD LANGLOAD
   !insertmacro MUI_LANGUAGE "${LANGLOAD}"
   !verbose push
-  !verbose off
+  !verbose 0
   !include "translations\${LANGLOAD}.nsh"
   !verbose pop
   !undef LANG

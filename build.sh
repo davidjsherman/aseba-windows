@@ -37,6 +37,12 @@ cmake\
  -D "QWT_LIBRARIES=$QWTDIR/lib/libqwt.a"\
  "$WORKSPACE/aseba"
 make
+mkdir -p strip
+rm -rf strip/*
+for f in *.exe; do
+    objcopy.exe --strip-all "$f" strip/"$f"
+done
+rm -f *.exe
 
 mkdir -p "$WORKSPACE/build/packager"
 cd "$WORKSPACE/build/packager"
