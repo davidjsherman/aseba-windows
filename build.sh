@@ -1,5 +1,5 @@
 #!/bin/sh
-echo QT PATH is ${QTDIR:='/mingw32'}
+echo QT PATH is ${QTDIR:='/mingw32/share/qt4'}
 echo QWT PATH is ${QWTDIR:='/mingw32'}
 echo ASEBA DEP is ${ASEBA_DEP:='/mingw32/bin'}
 set -eu
@@ -35,6 +35,7 @@ cmake\
  -D "ENKI_VIEWER_LIBRARY=$WORKSPACE/build/enki/viewer/libenkiviewer.a"\
  -D "QWT_INCLUDE_DIR=$QWTDIR/include/qwt"\
  -D "QWT_LIBRARIES=$QWTDIR/lib/libqwt.a"\
+ -D "CMAKE_CXX_FLAGS:STRING=-std=gnu++11"\
  "$WORKSPACE/aseba"
 make
 mkdir -p strip
