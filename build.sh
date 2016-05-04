@@ -52,6 +52,6 @@ makensis \
     -- "$WORKSPACE/package/aseba.nsi"
 
 cd "$WORKSPACE"
-mv "$WORKSPACE/package/*.exe" .
+mv "$WORKSPACE/package"/*.exe .
 env
 
