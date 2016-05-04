@@ -39,14 +39,14 @@
 ;  !define QT_VERSION "qt-4.8.2"
   !define QT_VERSION "qt-4.8.4"
 
-  !define PACKAGE_BIN "..\..\build\package"
+  !define PACKAGE_BIN "..\build\package"
   
   !define ASEBA_SRC "..\aseba"
-  !define ASEBA_BIN "..\..\build\aseba"			; Git
+  !define ASEBA_BIN "..\build\aseba"			; Git
   !define ASEBA_BIN_STRIP "${ASEBA_BIN}\strip"		; Stripped binaries
   
   !define DASHEL_SRC "..\dashel"		; Dashel git
-  !define DASHEL_BIN "..\..\build\dashel"
+  !define DASHEL_BIN "..\build\dashel"
 
   !define DRV_SRC "${ASEBA_DEP}\thymio-drv"
   !define DRV_INF_WIN "${ASEBA_DEP}\thymio-drv\win_xp-7"

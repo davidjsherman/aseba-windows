@@ -39,13 +39,12 @@ cmake\
 make
 mkdir -p strip
 rm -rf strip/*
-for f in *.exe; do
-    objcopy.exe --strip-all "$f" strip/"$f"
+for f in $(find clients examples switches targets tests -name \*.exe); do
+    objcopy.exe --strip-all "$f" strip/"${f##*/}" && rm -f "$f"
 done
-rm -f *.exe
 
-mkdir -p "$WORKSPACE/build/packager"
-cd "$WORKSPACE/build/packager"
+mkdir -p "$WORKSPACE/build/package"
+cd "$WORKSPACE/build/package"
 makensis \
     -D"ASEBA_DEP=$ASEBA_DEP" \
     -D"QTDIR=$QTDIR" \
