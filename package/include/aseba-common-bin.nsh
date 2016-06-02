@@ -131,6 +131,12 @@ SectionGroup /e "!Aseba" GroupAseba
 		File "${ASEBA_DEP}\SDL.dll"
 		File "${ASEBA_DEP}\libeay32.dll"
 		File "${ASEBA_DEP}\ssleay32.dll"
+		File "${ASEBA_DEP}\libxml2-2.dll"
+		File "${ASEBA_DEP}\libiconv-2.dll"
+		File "${ASEBA_DEP}\liblzma-5.dll"
+		File "${ASEBA_DEP}\zlib1.dll"
+		File "${ASEBA_DEP}\libpng16-16.dll"
+		File "${ASEBA_DEP}\libsqlite3-0.dll"
 
 		SetOutPath "$INSTDIR\sqldrivers"
 		File "${QTDIR}\plugins\sqldrivers\qsqlite4.dll"
@@ -201,6 +207,9 @@ SectionGroup /e $(NAME_GroupCLI) GroupCLI
 		SetOutPath "$INSTDIR"
 
 		File "${ASEBA_BIN_STRIP}\asebahttp.exe"
+		File "${ASEBA_BIN_STRIP}\asebascratch.exe"
+		File "${ASEBA_SRC}\examples\clients\scratch\asebascratch.ico"
+		File "${ASEBA_SRC}\examples\clients\scratch\e2e-scratch\thymio_motion.aesl"
 
 
 		SetShellVarContext all		; current / all. Install program for all users
