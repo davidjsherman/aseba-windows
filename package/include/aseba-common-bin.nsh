@@ -216,6 +216,7 @@ SectionGroup /e $(NAME_GroupCLI) GroupCLI
 		!insertmacro MUI_STARTMENU_WRITE_BEGIN Application
 			CreateDirectory "$SMPROGRAMS\$StartMenuFolder\$(STR_Tools)"
 			CreateShortCut "$SMPROGRAMS\$StartMenuFolder\$(STR_Tools)\$(STR_Cmd_Line).lnk" "%windir%\system32\cmd.exe" "$INSTDIR"
+			CreateShortCut "$SMPROGRAMS\$StartMenuFolder\$(STR_Tools)\Aseba Scratch.lnk" "$INSTDIR\asebascratch.exe" "" "$INSTDIR\asebascratch.ico"
 		!insertmacro MUI_STARTMENU_WRITE_END
 	SectionEnd
 
