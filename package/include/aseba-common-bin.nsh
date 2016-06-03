@@ -172,7 +172,8 @@ Section "Simulations" SecSim
 	File "${ASEBA_BIN_STRIP}\asebaplayground.exe"
 	File "${ASEBA_SRC}\menu\windows\asebachallenge.ico"
 	File "${ASEBA_SRC}\menu\windows\asebaplayground.ico"
-	File "${ASEBA_SRC}\targets\playground\unifr.playground"
+	SetOutPath "$INSTDIR\examples"
+	File /r "${ASEBA_SRC}\targets\playground\examples\*"
 	!endif ; FAKE_PACKAGE
 
 	; Populate the start menu
@@ -216,7 +217,7 @@ SectionGroup /e $(NAME_GroupCLI) GroupCLI
 		!insertmacro MUI_STARTMENU_WRITE_BEGIN Application
 			CreateDirectory "$SMPROGRAMS\$StartMenuFolder\$(STR_Tools)"
 			CreateShortCut "$SMPROGRAMS\$StartMenuFolder\$(STR_Tools)\$(STR_Cmd_Line).lnk" "%windir%\system32\cmd.exe" "$INSTDIR"
-			CreateShortCut "$SMPROGRAMS\$StartMenuFolder\$(STR_Tools)\Aseba Scratch.lnk" "$INSTDIR\asebascratch.exe" "" "$INSTDIR\asebascratch.ico"
+			CreateShortCut "$SMPROGRAMS\$StartMenuFolder\$(STR_Tools)\Aseba Scratch.lnk" "$INSTDIR\asebascratch.exe" "" "$INSTDIR\asebascratch.ico" "" SW_SHOWMINIMIZED
 		!insertmacro MUI_STARTMENU_WRITE_END
 	SectionEnd
 
