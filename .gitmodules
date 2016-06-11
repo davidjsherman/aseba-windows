@@ -10,6 +10,6 @@
 	path = aseba
 	url = https://github.com/davidjsherman/aseba.git
 	branch = master
-[submodule "packager/inirobot"]
-	path = packager/inirobot
+[submodule "package/inirobot"]
+	path = package/inirobot
 	url = https://github.com/davidjsherman/inirobot-windows.git
