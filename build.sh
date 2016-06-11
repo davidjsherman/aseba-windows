@@ -48,9 +48,9 @@ mkdir -p "$WORKSPACE/build/package"
 cd "$WORKSPACE/build/package"
 
 make -C "$WORKSPACE"/package/inirobot all archive \
-     PORTLIST="$WORKSPACE"/build/dashel/portlist \
-     ASEBAHTTP="$WORKSPACE"/build/aseba/switches/http/asebahttp \
-     ASEBASCRATCH="$WORKSPACE"/build/aseba/examples/clients/scratch/asebascratch
+     PORTLIST="$WORKSPACE"/build/dashel/portlist.exe \
+     ASEBAHTTP="$WORKSPACE"/build/aseba/switches/http/asebahttp.exe \
+     ASEBASCRATCH="$WORKSPACE"/build/aseba/examples/clients/scratch/asebascratch.exe
 
 makensis \
     -D"ASEBA_DEP=$ASEBA_DEP" \
