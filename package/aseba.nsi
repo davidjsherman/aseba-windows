@@ -81,7 +81,7 @@ LicenseLangString license ${LANG_ITALIAN} "${ASEBA_SRC}\license.txt"
 
   !define MY_NAME $(STR_Package_Name)
   !define /date Iso8601 "%Y%m%dT%H%M"
-  OutFile "aseba-djs-${VERSION}-${Iso8601}-win32.exe"
+  OutFile "${PACKAGE_BIN}\aseba-djs-${VERSION}-${Iso8601}-win32.exe"
   Name ${MY_NAME}
 
 ;--------------------------------

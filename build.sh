@@ -46,12 +46,24 @@ done
 
 mkdir -p "$WORKSPACE/build/package"
 cd "$WORKSPACE/build/package"
+
+make -C "$WORKSPACE"/package/inirobot all archive \
+     PORTLIST=$(cygpath "$WORKSPACE")/build/dashel/portlist.exe \
+     ASEBAHTTP=$(cygpath "$WORKSPACE")/build/aseba/strip/asebahttp.exe \
+     ASEBASCRATCH=$(cygpath "$WORKSPACE")/build/aseba/strip/asebascratch.exe \
+     SCRATCH_ZIP=$(cygpath "$WORKSPACE")/build/package/Scratch.zip
+
 makensis \
     -D"ASEBA_DEP=$ASEBA_DEP" \
     -D"QTDIR=$QTDIR" \
     -- "$WORKSPACE/package/aseba.nsi"
 
+ASEBA_OUT=$(ls -1t aseba*.exe|head -1)
+SCRATCH_OUT=scratch2thymio2-${ASEBA_OUT#aseba-}
+SCRATCH_OUT=${SCRATCH_OUT%.exe}.zip
+
 cd "$WORKSPACE"
-mv "$WORKSPACE/package"/*.exe .
+mv "$WORKSPACE"/build/package/*.exe .
+mv "$WORKSPACE"/build/package/Scratch.zip $SCRATCH_OUT
 env
 
