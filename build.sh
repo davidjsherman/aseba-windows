@@ -46,6 +46,12 @@ done
 
 mkdir -p "$WORKSPACE/build/package"
 cd "$WORKSPACE/build/package"
+
+make -C "$WORKSPACE"/packager/osx all dmg \
+     PORTLIST="$WORKSPACE"/build/dashel/portlist \
+     ASEBAHTTP="$WORKSPACE"/build/aseba/switches/http/asebahttp \
+     ASEBASCRATCH="$WORKSPACE"/build/aseba/examples/clients/scratch/asebascratch
+
 makensis \
     -D"ASEBA_DEP=$ASEBA_DEP" \
     -D"QTDIR=$QTDIR" \
