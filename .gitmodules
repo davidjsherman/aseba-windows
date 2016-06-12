@@ -11,5 +11,5 @@
 	url = https://github.com/davidjsherman/aseba.git
 	branch = master
 [submodule "package/inirobot"]
-	path = package/inirobot
+	path = package/inirobot-windows
 	url = https://github.com/davidjsherman/inirobot-windows.git

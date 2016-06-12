@@ -47,7 +47,7 @@ done
 mkdir -p "$WORKSPACE/build/package"
 cd "$WORKSPACE/build/package"
 
-make -C "$WORKSPACE"/package/inirobot all archive \
+make -C "$WORKSPACE"/package/inirobot-windows all archive \
      PORTLIST=$(cygpath "$WORKSPACE")/build/dashel/portlist.exe \
      ASEBAHTTP=$(cygpath "$WORKSPACE")/build/aseba/strip/asebahttp.exe \
      ASEBASCRATCH=$(cygpath "$WORKSPACE")/build/aseba/strip/asebascratch.exe \
