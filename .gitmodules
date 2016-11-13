@@ -1,7 +1,7 @@
 [submodule "dashel"]
 	path = dashel
-	url = https://github.com/aseba-community/dashel.git
-	branch = master
+	url = https://github.com/davidjsherman/dashel.git
+	branch = pollsocketstream
 [submodule "enki"]
 	path = enki
 	url = https://github.com/enki-community/enki.git
@@ -9,7 +9,8 @@
 [submodule "aseba"]
 	path = aseba
 	url = https://github.com/davidjsherman/aseba.git
-	branch = master
+	branch = alpha-classcod
 [submodule "package/inirobot"]
 	path = package/inirobot-windows
 	url = https://github.com/davidjsherman/inirobot-windows.git
+	branch = master
