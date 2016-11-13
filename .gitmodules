@@ -10,7 +10,7 @@
 	path = aseba
 	url = https://github.com/davidjsherman/aseba.git
 	branch = alpha-classcod
-[submodule "package/inirobot"]
+[submodule "package/inirobot-windows"]
 	path = package/inirobot-windows
 	url = https://github.com/davidjsherman/inirobot-windows.git
 	branch = master
